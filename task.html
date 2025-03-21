@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details Table</title>
+    <style>
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        td {
+            background-color: #fafafa;
+        }
+        caption {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Styling for specific names */
+        .alok {
+            background-color: #ffcccb;  /* Light Red */
+            font-weight: bold;
+            color: #b30000;
+        }
+        .aarav {
+            background-color: #d0f0c0;  /* Light Green */
+            font-weight: bold;
+            color: #006600;
+        }
+        .samrath {
+            background-color: #d3d3d3;  /* Light Gray */
+            font-weight: bold;
+            color: #4d4d4d;
+        }
+        .hrithik {
+            background-color: #ffffcc;  /* Light Yellow */
+            font-weight: bold;
+            color: #b2b200;
+        }
+
+    </style>
+</head>
+<body>
+
+    <table>
+        <caption>Student Details</caption>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Registration Nos.</th>
+                <th colspan="2">CGPA Till Last Semester</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2" class="alok">Alok</td>
+                <td>2310545940</td>
+                <td>8.5</td>
+                <td rowspan="2" class="alok">8.4</td>
+            </tr>
+            <tr>
+                <td>2310513627</td>
+                <td>8.3</td>
+            </tr>
+            <tr>
+                <td rowspan="2" class="aarav">Aarav</td>
+                <td>2310544756</td>
+                <td>9.0</td>
+                <td rowspan="2" class="aarav">8.9</td>
+            </tr>
+            <tr>
+                <td>2310513406</td>
+                <td>8.8</td>
+            </tr>
+            <tr>
+                <td rowspan="2" class="samrath">Samrath Anand</td>
+                <td>2310544301</td>
+                <td>8.2</td>
+                <td rowspan="2" class="samrath">8.4</td>
+            </tr>
+            <tr>
+                <td>2310135098</td>
+                <td>8.6</td>
+            </tr>
+            <tr>
+                <td rowspan="2" class="hrithik">Hrithik Hars</td>
+                <td>2310500345</td>
+                <td>8.7</td>
+                <td rowspan="2" class="hrithik">8.8</td>
+            </tr>
+            <tr>
+                <td>2310509345</td>
+                <td>8.9</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
