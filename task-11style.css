@@ -18,7 +18,7 @@ a {
 
 /* Header */
 header {
-    background-color: #2C3E50;
+    background-color: #ab183d;
     padding: 20px;
     color: white;
     display: flex;
@@ -130,7 +130,7 @@ main {
 
 /* Footer */
 footer {
-    background-color: #2C3E50;
+    background-color: #ab183d;
     color: white;
     padding: 20px;
     text-align: center;
