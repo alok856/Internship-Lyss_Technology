@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Destinations</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 32px;
+        }
+
+        /* Navigation Styling */
+        nav {
+            background-color: #333;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Section Styling */
+        .main-section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 30px;
+        }
+
+        .destination-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .destination-card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .destination-card h2 {
+            margin-top: 15px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .destination-card p {
+            color: #666;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            font-size: 16px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-section {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-section {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 24px;
+            }
+
+            nav ul li a {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Explore Top Travel Destinations</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Destinations</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="main-section">
+        <div class="destination-card">
+            <img src="https://via.placeholder.com/300" alt="Beach">
+            <h2>Maldives</h2>
+            <p>A tropical paradise with clear waters, sandy beaches, and luxurious resorts.</p>
+        </div>
+        <div class="destination-card">
+            <img src="https://via.placeholder.com/300" alt="Mountain">
+            <h2>Switzerland</h2>
+            <p>Famous for its breathtaking landscapes, majestic mountains, and serene lakes.</p>
+        </div>
+        <div class="destination-card">
+            <img src="https://via.placeholder.com/300" alt="City">
+            <h2>Paris</h2>
+            <p>The city of love, famous for its iconic landmarks like the Eiffel Tower and Louvre.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 TravelDestinations.com | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
