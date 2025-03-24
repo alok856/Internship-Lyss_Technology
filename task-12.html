@@ -3,176 +3,408 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Destinations</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Virtual Assistant AI</title>
     <style>
-        /* General Reset */
+        /* General Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Body Styling */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f6f9;
         }
 
-        /* Header Styling */
+        /* Header Styles */
         header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 20px;
+            background-color: #172f3f;
+            color: #fff;
+            padding: 20px 0;
             text-align: center;
+            position: relative;
+            z-index: 100;
         }
 
-        header h1 {
-            font-size: 32px;
+        header .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
         }
 
-        /* Navigation Styling */
+        header .logo img {
+            width: 50px; /* Adjust the logo size */
+            height: auto;
+        }
+
+        /* Your Name at the Top-Right */
+        #name {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1rem;
+            font-family: 'Cursive', sans-serif;
+            color: #f39c12;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 5px 15px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
         nav {
-            background-color: #333;
+            position: relative;
         }
 
         nav ul {
-            list-style-type: none;
+            list-style: none;
             display: flex;
-            justify-content: center;
-            padding: 10px;
+            justify-content: flex-end;
+            padding-right: 20px;
         }
 
         nav ul li {
-            margin: 0 15px;
+            margin-left: 20px;
         }
 
         nav ul li a {
-            color: white;
+            color: #fff;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s;
         }
 
         nav ul li a:hover {
-            text-decoration: underline;
+            color: #f39c12;
         }
 
-        /* Main Section Styling */
-        .main-section {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            padding: 30px;
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
         }
 
-        .destination-card {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        .menu-toggle .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 5px;
         }
 
-        .destination-card img {
-            width: 100%;
-            border-radius: 8px;
+        .menu-checkbox {
+            display: none;
         }
 
-        .destination-card h2 {
-            margin-top: 15px;
-            font-size: 24px;
-            color: #333;
+        .menu-checkbox:checked + .menu-toggle + ul {
+            display: block;
         }
 
-        .destination-card p {
-            color: #666;
-        }
-
-        /* Footer Styling */
-        footer {
-            background-color: #333;
-            color: white;
+        /* Hero Section */
+        .intro {
+            padding: 100px 0;
             text-align: center;
-            padding: 15px;
+            background: linear-gradient(to bottom right, #2c3e50, #34495e);
+            color: #fff;
             position: relative;
-            bottom: 0;
-            width: 100%;
         }
 
-        footer p {
-            font-size: 16px;
+        .intro h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: bold;
         }
 
-        /* Responsive Design */
+        .intro p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .intro button {
+            padding: 15px 30px;
+            background-color: #f39c12;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .intro button:hover {
+            background-color: #e67e22;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 20px;
+            background-color: #ecf0f1;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .feature {
+            background-color: #fff;
+            padding: 25px;
+            margin: 15px;
+            border-radius: 8px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: scale(1.05);
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .feature p {
+            font-size: 1rem;
+            color: #7f8c8d;
+        }
+
+        /* Demo Section */
+        .demo {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: #f4f6f9;
+        }
+
+        .demo h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .demo p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: #34495e;
+        }
+
+        .demo-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .demo input[type="text"] {
+            padding: 15px;
+            width: 60%;
+            font-size: 1rem;
+            border-radius: 8px;
+            border: 2px solid #bdc3c7;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .demo input[type="text"]:focus {
+            border-color: #f39c12;
+        }
+
+        .demo button {
+            padding: 15px 30px;
+            background-color: #f39c12;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .demo button:hover {
+            background-color: #e67e22;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .testimonial {
+            margin-bottom: 40px;
+        }
+
+        .testimonial p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+        }
+
+        .testimonial span {
+            display: block;
+            font-size: 1rem;
+            font-style: italic;
+            color: #34495e;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer .social-media a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        footer .social-media a:hover {
+            color: #f39c12;
+        }
+
+        /* Mobile Responsive Design */
         @media (max-width: 768px) {
-            .main-section {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            header h1 {
-                font-size: 28px;
-            }
-
             nav ul {
+                display: none;
                 flex-direction: column;
-                align-items: center;
+                width: 100%;
+                text-align: center;
+                margin-top: 20px;
             }
 
             nav ul li {
-                margin-bottom: 10px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .main-section {
-                grid-template-columns: 1fr;
+                margin: 15px 0;
             }
 
-            header h1 {
-                font-size: 24px;
+            .menu-toggle {
+                display: block;
             }
 
-            nav ul li a {
-                font-size: 16px;
+            .intro h2 {
+                font-size: 2rem;
+            }
+
+            .intro p {
+                font-size: 1rem;
+            }
+
+            .intro button {
+                width: 100%;
+            }
+
+            .demo input[type="text"] {
+                width: 80%;
+            }
+
+            .demo button {
+                width: 80%;
             }
         }
     </style>
 </head>
 <body>
-
+    <!-- Header -->
     <header>
-        <h1>Explore Top Travel Destinations</h1>
+        <div class="logo">
+            <!-- Replace with your logo image -->
+            <img src="ai.jpg" alt="Logo">
+        </div>
+
+        <nav>
+            <input type="checkbox" class="menu-checkbox" id="menu-toggle">
+            <label class="menu-toggle" for="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </label>
+
+            <ul>
+                <li><a href="#intro">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#demo">Demo</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Destinations</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
+    <!-- Introduction Section -->
+    <section id="intro" class="intro">
+        <h2>Welcome to Virtual Assistant AI</h2>
+        <p>Your personal AI assistant to help with daily tasks and more!</p>
+        <button>Get Started</button>
+    </section>
 
-    <section class="main-section">
-        <div class="destination-card">
-            <img src="https://via.placeholder.com/300" alt="Beach">
-            <h2>Maldives</h2>
-            <p>A tropical paradise with clear waters, sandy beaches, and luxurious resorts.</p>
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2>Features</h2>
+        <div class="feature">
+            <h3>Voice Commands</h3>
+            <p>Control your devices, set reminders, and more using your voice.</p>
         </div>
-        <div class="destination-card">
-            <img src="https://via.placeholder.com/300" alt="Mountain">
-            <h2>Switzerland</h2>
-            <p>Famous for its breathtaking landscapes, majestic mountains, and serene lakes.</p>
+        <div class="feature">
+            <h3>Smart Suggestions</h3>
+            <p>Get smart recommendations based on your preferences and habits.</p>
         </div>
-        <div class="destination-card">
-            <img src="https://via.placeholder.com/300" alt="City">
-            <h2>Paris</h2>
-            <p>The city of love, famous for its iconic landmarks like the Eiffel Tower and Louvre.</p>
+        <div class="feature">
+            <h3>Task Management</h3>
+            <p>Easily manage your tasks and to-do lists.</p>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 TravelDestinations.com | All Rights Reserved</p>
-    </footer>
+    <!-- Demo Section -->
+    <section id="demo" class="demo">
+        <h2>AI Demo</h2>
+        <p>Experience how the AI assistant can help you manage tasks and more:</p>
+        <div class="demo-box">
+            <input type="text" placeholder="Ask your assistant...">
+            <button>Ask</button>
+        </div>
+    </section>
 
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <h2><b><u>What Our Users Say</u></b></h2>
+        <div class="testimonial">
+            <p>This AI assistant changed the way I manage my day-to-day tasks. It's a lifesaver!</p>
+            <span>- Alok_the_Coder.</span>
+        </div>
+        <div class="testimonial">
+            <p>I love the voice command feature. It's so intuitive!</p>
+            <span>- @alok kr.</span>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>&copy; 2025 AI Assistant. All Rights Reserved.</p>
+        <div class="social-media">
+            <a href="https://www.facebook.com/share/16BfnAyNfS/">Facebook</a> | 
+            <a href="https://www.linkedin.com/in/alok-kumar-785762295">LinkedIn</a> | 
+            <a href="https://www.instagram.com/aarav_alok86?igsh=MTBqeGwzOHRvdnkzeQ==">Instagram</a>
+            <p><b><u>Developed_by_Alok.</u></b></p>
+        </div>
+    </footer>
 </body>
 </html>
