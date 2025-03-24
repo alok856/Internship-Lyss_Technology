@@ -157,11 +157,11 @@
         }
 
         .feature {
-            background-color: #fff;
+            background-color: #ffffff;
             padding: 25px;
             margin: 15px;
             border-radius: 8px;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 6px 10px rgba(208, 62, 62, 0.1);
             transition: transform 0.3s ease;
         }
 
@@ -253,14 +253,14 @@
 
         .testimonial p {
             font-size: 1.2rem;
-            color: #7f8c8d;
+            color: #8d9495;
         }
 
         .testimonial span {
             display: block;
             font-size: 1rem;
             font-style: italic;
-            color: #34495e;
+            color: #0e3357;
         }
 
         /* Footer Section */
@@ -272,15 +272,40 @@
         }
 
         footer .social-media a {
-            color: #fff;
             text-decoration: none;
-            margin: 0 15px;
             font-size: 1.2rem;
-            transition: color 0.3s;
+            margin: 0 15px;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
 
-        footer .social-media a:hover {
-            color: #f39c12;
+        /* Facebook Link */
+        footer .social-media a.facebook {
+            color: #ca7d25; /* Facebook Blue */
+        }
+
+        footer .social-media a.facebook:hover {
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        /* LinkedIn Link */
+        footer .social-media a.linkedin {
+            color: #a36e05; /* LinkedIn Blue */
+        }
+
+        footer .social-media a.linkedin:hover {
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        /* Instagram Link */
+        footer .social-media a.instagram {
+            color: #e4405f; /* Instagram Red */
+        }
+
+        footer .social-media a.instagram:hover {
+            color: #fff;
+            transform: scale(1.1);
         }
 
         /* Mobile Responsive Design */
@@ -400,9 +425,9 @@
     <footer id="contact">
         <p>&copy; 2025 AI Assistant. All Rights Reserved.</p>
         <div class="social-media">
-            <a href="https://www.facebook.com/share/16BfnAyNfS/">Facebook</a> | 
-            <a href="https://www.linkedin.com/in/alok-kumar-785762295">LinkedIn</a> | 
-            <a href="https://www.instagram.com/aarav_alok86?igsh=MTBqeGwzOHRvdnkzeQ==">Instagram</a>
+            <a href="https://www.facebook.com/share/16BfnAyNfS/" class="facebook">Facebook</a> | 
+            <a href="https://www.linkedin.com/in/alok-kumar-785762295" class="linkedin">LinkedIn</a> | 
+            <a href="https://www.instagram.com/aarav_alok86?igsh=MTBqeGwzOHRvdnkzeQ==" class="instagram">Instagram</a>
             <p><b><u>Developed_by_Alok.</u></b></p>
         </div>
     </footer>
