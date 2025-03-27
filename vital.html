@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,12 +11,14 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f0f4f8;
             color: #333;
+            overflow-x: hidden;
         }
 
         /* Header Section */
@@ -223,7 +226,7 @@
         .service-item:hover {
             background-color: #ffcc00;
             color: #004B87;
-            transform: translateY(-10px);
+            transform: translateY(-10px) rotate(360deg) scale(1.2);
         }
 
         .service-item h3 {
@@ -272,78 +275,80 @@
         }
 
         /* Footer Section */
-        /* Footer Section */
-footer {
-    background-color: #004B87;
-    padding: 10px 20px; /* Reduced padding */
-    text-align: center;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+        footer {
+            background-color: #004B87;
+            padding: 10px 20px;
+            text-align: center;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
-/* Footer text and links styling */
-footer p {
-    font-size: 12px;
-    margin-bottom: 5px; /* Reduced margin for more compactness */
-}
+        footer p {
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
 
-/* Social Media Links */
-footer .social-media {
-    display: flex;
-    justify-content: center;
-    margin-top: 5px; /* Reduced margin for less space */
-}
+        /* Social Media Links */
+        footer .social-media {
+            display: flex;
+            justify-content: center;
+            margin-top: 5px;
+        }
 
-footer .social-media a {
-    text-decoration: none;
-    font-size: 1.2rem;
-    margin: 15px;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
+        footer .social-media a {
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 0 15px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
 
-/* Facebook Link */
-footer .social-media a.facebook {
-    color: #ca7d25; /* Facebook Blue */
-}
+        footer .social-media a.facebook {
+            color: #ca7d25;
+        }
 
-footer .social-media a.facebook:hover {
-    color: #fff;
-    transform: scale(1.1);
-}
+        footer .social-media a.facebook:hover {
+            color: #fff;
+            transform: scale(1.1);
+        }
 
-/* LinkedIn Link */
-footer .social-media a.linkedin {
-    color: #a36e05; /* LinkedIn Blue */
-}
+        footer .social-media a.linkedin {
+            color: #a36e05;
+        }
 
-footer .social-media a.linkedin:hover {
-    color: #fff;
-    transform: scale(1.1);
-}
+        footer .social-media a.linkedin:hover {
+            color: #fff;
+            transform: scale(1.1);
+        }
 
-/* Instagram Link */
-footer .social-media a.instagram {
-    color: #e4405f; /* Instagram Red */
-}
+        footer .social-media a.instagram {
+            color: #e4405f;
+        }
 
-footer .social-media a.instagram:hover {
-    color: #fff;
-    transform: scale(1.1);
-}
+        footer .social-media a.instagram:hover {
+            color: #fff;
+            transform: scale(1.1);
+        }
 
-/* Multi-colored highlight for "Developed by Alok" */
-footer .highlight {
-    font-size: 18px;
-    font-weight: bold;
-    color: transparent;
-    background-image: linear-gradient(to right, #ff6600, #ff3366, #66ccff, #ffcc00);
-    background-clip: text;
-    -webkit-background-clip: text;
-    margin-top: 10px; /* Reduce space above */
-}
+        /* Added line between social media links */
+        footer .social-media a:not(:last-child)::after {
+            content: '|';
+            margin: 0 10px;
+            color: #fff;
+        }
+
+        /* Multi-colored highlight for "Developed by Alok" */
+        footer .highlight {
+            font-size: 18px;
+            font-weight: bold;
+            color: transparent;
+            background-image: linear-gradient(to right, #ff6600, #ff3366, #66ccff, #ffcc00);
+            background-clip: text;
+            -webkit-background-clip: text;
+            margin-top: 10px;
+        }
 
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
@@ -417,14 +422,20 @@ footer .highlight {
         }
     </style>
 </head>
+
 <body>
     <!-- Header Section -->
     <header>
         <div class="logo-container">
             <div class="logo">
                 <div>
-                    <span class="hospital-name"><h2><b>VitalCare Physiotherapy Clinic</b></h2></span>
-                    <div><hr><hr></div>
+                    <span class="hospital-name">
+                        <h2><b>VitalCare Physiotherapy Clinic</b></h2>
+                    </span>
+                    <div>
+                        <hr>
+                        <hr>
+                    </div>
                     <span class="doctor-name">Dr. Chandani Kumari</span>
                     <span class="specialist-title">(Physiotherapy Specialist)</span>
                 </div>
@@ -432,7 +443,8 @@ footer .highlight {
         </div>
 
         <div class="center-logo">
-            <img src="https://t3.ftcdn.net/jpg/03/24/58/44/360_F_324584485_qtdluDzmBNkJvmntEPlNeG1htwPktgCa.jpg" alt="Center Logo">
+            <img src="https://t3.ftcdn.net/jpg/03/24/58/44/360_F_324584485_qtdluDzmBNkJvmntEPlNeG1htwPktgCa.jpg"
+                alt="Center Logo">
         </div>
 
         <nav>
@@ -461,7 +473,11 @@ footer .highlight {
         </div>
         <div class="bio">
             <h2>About Dr. Chandani Kumari</h2>
-            <p>Dr. Chandani Kumari is a passionate and highly motivated physiotherapy student, currently pursuing a Bachelor's in Physiotherapy (BPT). With a deep interest in the human body and rehabilitation, she is committed to helping her patients recover and improve their physical health through specialized treatments. She is currently exploring a variety of clinical techniques and therapies aimed at restoring function and mobility to patients.</p>
+            <p><span style="color: rgb(99, 49, 49);"><b>Dr. Chandani Kumari</b></span> is a passionate and highly motivated physiotherapy student, currently pursuing a
+                <span style="color: #1261bc;"><b>Bachelor's in Physiotherapy (BPT)</b></span>. With a deep interest in the human body and rehabilitation, she is
+                committed to helping her patients recover and improve their physical health through specialized
+                treatments. She is currently exploring a variety of clinical techniques and therapies aimed at restoring
+                function and mobility to patients.</p>
         </div>
     </section>
 
@@ -486,22 +502,22 @@ footer .highlight {
     <section class="contact-section" id="contact">
         <h2>Contact</h2>
         <p>Feel free to get in touch for any consultation or inquiries.</p>
-        <a href="mailto:drchandani@example.com">Contact Me</a>
+        <a href="mailto:drchandani@example.com">Email Us</a>
     </section>
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2025 Dr. Chandani Kumari. All rights reserved. | <a href="mailto:drchandani@2006.com" style="color: #ffcc00;">Contact</a></p>
+        <p>&copy; 2025 Dr. Chandani Kumari. All rights reserved. | <a href="mailto:drchandani@2006.com"style="color: #ffcc00;">contact</a></p>
 
         <div class="social-media">
-            <a href="https://www.facebook.com/share/16BfnAyNfS/" class="facebook">Facebook</a> | 
-            <a href="https://www.linkedin.com/in/alok-kumar-785762295" class="linkedin">LinkedIn</a> | 
+            <a href="https://www.facebook.com/share/16BfnAyNfS/" class="facebook">Facebook</a>
+            <a href="https://www.linkedin.com/in/alok-kumar-785762295" class="linkedin">LinkedIn</a>
             <a href="https://www.instagram.com/aarav_alok86?igsh=MTBqeGwzOHRvdnkzeQ==" class="instagram">Instagram</a>
         </div>
 
         <p class="highlight"><b>Developed by Alok</b></p>
     </footer>
-    
+
     <script>
         // JavaScript for adding active class on clicked nav link
         const navLinks = document.querySelectorAll('.nav-link');
