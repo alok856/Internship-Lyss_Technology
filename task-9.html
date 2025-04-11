@@ -1,98 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webpage with Divisions</title>
-    <style>
-        /* General styling for the body */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alok's Webpage</title>
 
-        /* Container to hold all divisions */
-        .container {
-            display: flex;
-            justify-content: space-evenly; /* Space divisions evenly */
-            align-items: center; /* Vertically center-align divisions */
-            margin-top: 50px;
-        }
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-        /* Styling for each division */
-        .division {
-            text-align: center;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 200px;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Segoe UI', sans-serif;
+    }
 
-        /* Styling for the images above headings */
-        .division img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-        }
+    body {
+      background: linear-gradient(to right, #fceabb, #f8b500);
+      overflow-x: hidden;
+    }
 
-        /* Styling for headings */
-        .division h2 {
-            font-size: 1.5rem;
-            color: #333;
-        }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      padding: 40px;
+      background-color: white;
+      border-radius: 20px;
+      max-width: 1200px;
+      margin: 40px auto;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
 
-        /* Hover effect on each division */
-        .division:hover {
-            background-color: #f1f1f1;
-            transform: translateY(-5px); /* Slight lift effect */
-        }
+    .box {
+      flex: 1 1 220px;
+      max-width: 240px;
+      background-color: #fff5e1;
+      text-align: center;
+      padding: 30px 20px;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
 
-        /* Responsive design for smaller screens */
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column; /* Stack divisions vertically */
-                align-items: flex-start;
-            }
+    .box:hover {
+      transform: translateY(-8px);
+    }
 
-            .division {
-                width: 100%;
-                margin-bottom: 20px; /* Add space between divisions */
-            }
-        }
-    </style>
+    .box i {
+      font-size: 40px;
+      color: #ff9800;
+      margin-bottom: 15px;
+    }
+
+    .box h2 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      background-color: #ff9800;
+      color: white;
+      font-weight: bold;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #e68a00;
+    }
+
+    .content-section {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: #fffaf0;
+      border-left: 6px solid #ffa726;
+      border-radius: 10px;
+      display: none;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .content-section.show {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .content-section h3 {
+      color: #ff9800;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      margin: 60px 0 30px;
+    }
+
+    footer h4 {
+      font-size: 18px;
+      background: linear-gradient(90deg, #ff6a00, #ee0979, #112930, #00f2fe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+      animation: glow infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #ff6a00, 0 0 15px #ee0979;
+      }
+      to {
+        text-shadow: 0 0 10px #00c6ff, 0 0 20px #00f2fe, 0 0 30px #fff;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Main container holding all the divisions -->
-    <div class="container">
-        <!-- Home Division -->
-        <div class="division">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrfVvIlLb0jOKGcmfqMWVziY0PVoPAChCHyA&s" alt="Home Logo">
-            <h2>Home</h2>
-        </div>
-
-        <!-- About Division -->
-        <div class="division">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOQvcf0tr8lLrwUrQ7uXYosTVACpWgvY4xqQ&s" alt="About Logo">
-            <h2>About</h2>
-        </div>
-
-        <!-- Gallery Division -->
-        <div class="division">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaNaWlxtftZFb02uDthOdq1Ms-oo-VD9o9S0ULeQ5q0hZyaeWE_ue-_GIdACgNFQcAUAE&usqp=CAU" alt="Gallery Logo">
-            <h2>Gallery</h2>
-        </div>
-
-        <!-- Contact Division -->
-        <div class="division">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYzg6IB0Ez1dCrBhkqbxE3Iq_1J2PpQEh_nQ&s" alt="Contact Logo">
-            <h2>Contact</h2>
-        </div>
+  <!-- MAIN SECTIONS -->
+  <div class="container">
+    <div class="box">
+      <i class="fas fa-home"></i>
+      <h2>Home</h2>
+      <button class="btn" onclick="scrollToSection('home-section')">Explore</button>
     </div>
+    <div class="box">
+      <i class="fas fa-user"></i>
+      <h2>About</h2>
+      <button class="btn" onclick="scrollToSection('about-section')">Explore</button>
+    </div>
+    <div class="box">
+      <i class="fas fa-image"></i>
+      <h2>Gallery</h2>
+      <button class="btn" onclick="scrollToSection('gallery-section')">Explore</button>
+    </div>
+    <div class="box">
+      <i class="fas fa-envelope"></i>
+      <h2>Contact</h2>
+      <button class="btn" onclick="scrollToSection('contact-section')">Explore</button>
+    </div>
+  </div>
+
+  <!-- SCROLL TO SECTIONS -->
+  <div id="home-section" class="content-section">
+    <h3>Welcome to Home</h3>
+    <p>This is your starting point. Explore our site with ease and find what you're looking for in seconds!</p>
+  </div>
+
+  <div id="about-section" class="content-section">
+    <h3>About Us</h3>
+    <p>We are passionate developers, building beautiful and responsive web designs with love and dedication.</p>
+  </div>
+
+  <div id="gallery-section" class="content-section">
+    <h3>Gallery</h3>
+    <p>Check out our stunning visual content, from photos to creative art — we’ve got it all.</p>
+  </div>
+
+  <div id="contact-section" class="content-section">
+    <h3>Contact Us</h3>
+    <p>Have any questions or need help? Reach out to us anytime and we’ll be happy to assist you.</p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <h4><b><u>Developed by Alok</u></b></h4>
+  </footer>
+
+  <script>
+    function scrollToSection(id) {
+      const section = document.getElementById(id);
+      section.classList.add('show');
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+
 </body>
 </html>
