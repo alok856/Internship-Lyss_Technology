@@ -171,7 +171,7 @@
             height: 250px;
             border-radius: 50%;
             overflow: hidden;
-            border: 5px solid #004B87;
+            border: 5px solid #400101;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
@@ -453,6 +453,8 @@
                 <li><a href="#about" class="nav-link">About Me</a></li>
                 <li><a href="#services" class="nav-link">Services</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#sign-up" class="nav-link">Sign-up</a></li>
+                <li><a href="#login" class="nav-link">Login</a></li>
             </ul>
         </nav>
     </header>
@@ -505,6 +507,7 @@
         <a href="mailto:drchandani@example.com">Email Us</a>
     </section>
 
+
     <!-- Footer Section -->
     <footer>
         <p>&copy; 2025 Dr. Chandani Kumari. All rights reserved. | <a href="mailto:drchandani@2006.com"style="color: #ffcc00;">contact</a></p>
@@ -528,5 +531,105 @@
             });
         });
     </script>
+
+<!-- ======= SIGN-UP & LOGIN SECTION ======= -->
+<style>
+  .form-section {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    font-family: "Segoe UI", sans-serif;
+  }
+
+  .form-section h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #007bff;
+  }
+
+  .form-section label {
+    font-weight: 600;
+    display: block;
+    margin-top: 15px;
+    color: #333;
+  }
+
+  .form-section input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.3s;
+  }
+
+  .form-section input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+
+  .form-section button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .form-section button:hover {
+    background-color: #0056b3;
+  }
+
+  #sign-up, #login {
+    padding: 60px 0;
+    background: #f4f8fb;
+  }
+</style>
+
+<!-- ======= SIGN-UP FORM ======= -->
+<section id="sign-up">
+  <div class="form-section">
+    <h2>Create Account</h2>
+    <form action="signup.php" method="POST">
+      <label for="signup-username">Username</label>
+      <input type="text" id="signup-username" name="username" required>
+
+      <label for="signup-email">Email</label>
+      <input type="email" id="signup-email" name="email" required>
+
+      <label for="signup-password">Password</label>
+      <input type="password" id="signup-password" name="password" required>
+
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+</section>
+
+<!-- ======= LOGIN FORM ======= -->
+<section id="login">
+  <div class="form-section">
+    <h2>Login</h2>
+    <form action="login.php" method="POST">
+      <label for="login-username">Username</label>
+      <input type="text" id="login-username" name="username" required>
+
+      <label for="login-password">Password</label>
+      <input type="password" id="login-password" name="password" required>
+
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</section>
+
+
 </body>
 </html>

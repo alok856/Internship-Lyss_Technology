@@ -13,11 +13,27 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #e3f2fd;
-        }
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #e3f2fd;
+    background-image: url('https://wallpapers.com/images/featured/2440x1440-nature-background-z6t44psuemi6tkc2.jpg');
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-position: 0 0;
+    animation: slideBg 40s linear infinite;
+    overflow-x: hidden;
+}
+
+@keyframes slideBg {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
 
         header {
             background: #0288d1;
