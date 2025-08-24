@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - VitalCare Clinic</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f9ff;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #004B87, #0066cc);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .service-card h3 {
+            color: #004B87;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: #555;
+            font-size: 14px;
+        }
+
+        .service-card button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            background: #ffcc00;
+            color: #004B87;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .service-card button:hover {
+            background: #ff9900;
+        }
+
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.4s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .modal-content h2 {
+            margin-top: 0;
+            color: #004B87;
+        }
+
+        .modal-content input,
+        .modal-content textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .modal-content button {
+            width: 100%;
+            padding: 12px;
+            background: #004B87;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .modal-content button:hover {
+            background: #0066cc;
+        }
+
+        .close {
+            float: right;
+            font-size: 20px;
+            font-weight: bold;
+            color: #666;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Our Services</h1>
+        <p>Choose a service and enroll/query easily</p>
+    </header>
+
+    <section class="services">
+        <!-- Physiotherapy -->
+        <div class="service-card">
+            <img src="https://media.istockphoto.com/id/1199908661/photo/physiotherapist-treatment-patient-she-holding-patients-hand-shoulder-joint-treatment.jpg?s=612x612&w=0&k=20&c=yghgsRCfhifTxzIS8UqlHIxpyyHDUNXkfqwQHABDRuY="
+                alt="Physiotherapy">
+            <h3>Physiotherapy</h3>
+            <p>Advanced care for pain relief, mobility, and recovery.</p>
+            <button onclick="enrollService('Physiotherapy')">Enroll / Query</button>
+        </div>
+
+        <!-- Rehabilitation -->
+        <div class="service-card">
+            <img src="https://www.shutterstock.com/shutterstock/videos/3585029813/thumb/1.jpg?ip=x480"
+                alt="Rehabilitation">
+            <h3>Rehabilitation</h3>
+            <p>Specialized programs for post-injury & post-surgery recovery.</p>
+            <button onclick="enrollService('Rehabilitation')">Enroll / Query</button>
+        </div>
+
+        <!-- Sports Therapy -->
+        <div class="service-card">
+            <img src="https://t4.ftcdn.net/jpg/02/81/99/91/360_F_281999165_mt4ZNtgaxP77oJvIaKklqjm2tkiLwwJZ.jpg"
+                alt="Sports Therapy">
+            <h3>Sports Therapy</h3>
+            <p>Care and recovery for athletes & active individuals.</p>
+            <button onclick="enrollService('Sports Therapy')">Enroll / Query</button>
+        </div>
+
+        <!-- Orthopedic Care -->
+        <div class="service-card">
+            <img src="https://img.freepik.com/free-photo/male-doctor-pointing-human-skeleton-show-spinal-cord-explain-mechanical-disorders-rehabilitation-cabinet-specialist-explaining-back-bones-system-physical-therapy_482257-39342.jpg?semt=ais_hybrid&w=740&q=80"
+                alt="Orthopedic Care">
+            <h3>Orthopedic Care</h3>
+            <p>Treatment and therapy for bones, joints, and muscles.</p>
+            <button onclick="enrollService('Orthopedic Care')">Enroll / Query</button>
+        </div>
+
+        <!-- Neurological Rehab -->
+        <div class="service-card">
+            <img src="https://media.istockphoto.com/id/1280119885/photo/nurse-and-male-patient-exercising.jpg?s=612x612&w=0&k=20&c=rcoty22_5p0wHGYkL6_GUB8ep6SAaUeWzZMa2oxD-n4="
+                alt="Neurological Rehab">
+            <h3>Neurological Rehab</h3>
+            <p>Support for stroke, paralysis, and nervous system recovery.</p>
+            <button onclick="enrollService('Neurological Rehab')">Enroll / Query</button>
+        </div>
+
+        <!-- Pediatric Physiotherapy -->
+        <div class="service-card">
+            <img src="https://fuelhealthwellness.com/wp-content/uploads/2025/05/Pediatric-Physical-Therapy.webp"
+                alt="Pediatric Physiotherapy">
+            <h3>Pediatric Physiotherapy</h3>
+            <p>Gentle therapy for infants, children, and adolescents.</p>
+            <button onclick="enrollService('Pediatric Physiotherapy')">Enroll / Query</button>
+        </div>
+
+        <!-- Cardiac Rehabilitation -->
+        <div class="service-card">
+            <img src="https://www.ahdubai.com/uploads/departments/653891639976304Cardiac-Rehabilitation.webp"
+                alt="Cardiac Rehab">
+            <h3>Cardiac Rehabilitation</h3>
+            <p>Recovery and wellness for heart patients with exercise therapy.</p>
+            <button onclick="enrollService('Cardiac Rehabilitation')">Enroll / Query</button>
+        </div>
+
+        <!-- Pain Management -->
+        <div class="service-card">
+            <img src="https://media.istockphoto.com/id/1438404344/photo/oncologist-doing-a-homecare-visit.jpg?s=612x612&w=0&k=20&c=AL7Xj-ot3saACCc9QgaPxtzP7xEOz-uQJtbd-0132xk="
+                alt="Pain Management">
+            <h3>Pain Management</h3>
+            <p>Specialized care for chronic pain & lifestyle improvement.</p>
+            <button onclick="enrollService('Pain Management')">Enroll / Query</button>
+        </div>
+
+        <!-- Post-Surgical Recovery -->
+        <div class="service-card">
+            <img src="https://media.istockphoto.com/id/1341490004/photo/doctors-and-nurses-celebrating-senior-man-leaving-the-hospital-after-recovery-wearing.jpg?s=612x612&w=0&k=20&c=v2YLIuogzQgOOa3Q_5TWQ6rZp6WGfKH1TLtP-FnEei0="
+                alt="Post-Surgical Recovery">
+            <h3>Post-Surgical Recovery</h3>
+            <p>Comprehensive physiotherapy after major/minor surgeries.</p>
+            <button onclick="enrollService('Post-Surgical Recovery')">Enroll / Query</button>
+        </div>
+
+        <!-- Geriatric Physiotherapy -->
+        <div class="service-card">
+            <img src="https://media.istockphoto.com/id/610436358/photo/shell-have-him-rehabilitated-in-no-time.jpg?s=612x612&w=0&k=20&c=XyXL-wxD6PrpIb8JbetcgxAHB-YQoKZM_1THmLELUHY="
+                alt="Geriatric Physiotherapy">
+            <h3>Geriatric Physiotherapy</h3>
+            <p>Specialized elderly care for balance, strength & mobility.</p>
+            <button onclick="enrollService('Geriatric Physiotherapy')">Enroll / Query</button>
+        </div>
+    </section>
+
+    <!-- Back Button -->
+    <div style="text-align:center; margin: 40px 0;">
+        <a href="vital.html" style="background:#004B87; color:#fff; padding:12px 24px; 
+            text-decoration:none; border-radius:8px; font-weight:bold;
+            transition:0.3s;">
+            ⬅ Back to Home
+        </a>
+    </div>
+
+    <!-- Modal -->
+    <div id="enrollModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="serviceTitle">Service Enquiry</h2>
+            <form id="enrollForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" id="enrollEmail" placeholder="Your Email" required>
+                <input type="password" id="enrollPassword" placeholder="Confirm Password" required>
+                <textarea rows="4" placeholder="Your Query"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Enroll function - login check
+        function enrollService(service) {
+            const user = JSON.parse(localStorage.getItem("user"));
+            if (!user) {
+                alert("⚠ Please login or signup first!");
+                window.location.href = "vital-sign.html"; // ya login.html
+                return;
+            }
+            document.getElementById("enrollModal").style.display = "flex";
+            document.getElementById("serviceTitle").innerText = service + " - Enquiry";
+        }
+
+        function closeModal() {
+            document.getElementById("enrollModal").style.display = "none";
+        }
+
+        // Enrollment form validation
+        document.getElementById("enrollForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const storedUser = JSON.parse(localStorage.getItem("user"));
+            const email = document.getElementById("enrollEmail").value;
+            const pass = document.getElementById("enrollPassword").value;
+
+            if (storedUser.email === email && storedUser.password === pass) {
+                alert("✅ Enrollment submitted successfully!");
+                document.getElementById("enrollForm").reset(); // reset form fields
+                closeModal();
+            }
+            else {
+                alert("❌ Email or password does not match your account!");
+            }
+        });
+
+        window.onclick = function (event) {
+            if (event.target === document.getElementById("enrollModal")) {
+                closeModal();
+            }
+        };
+    </script>
+</body>
+
+</html>

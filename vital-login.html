@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg,#0066cc,#004B87);
+      margin: 0; padding: 0;
+    }
+    .form-section {
+      max-width: 420px; margin: 80px auto; padding: 30px;
+      background: #fff; border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from {opacity:0; transform:translateY(-20px);}
+      to {opacity:1; transform:translateY(0);}
+    }
+    .form-section h2 { text-align: center; color: #004B87; margin-bottom: 20px; }
+    .form-section label { font-weight: bold; display: block; margin-top: 12px; color:#333; }
+    .form-section input {
+      width: 100%; padding: 10px; margin-top: 5px;
+      border: 1px solid #ccc; border-radius: 8px;
+      transition: border 0.3s, box-shadow 0.3s;
+    }
+    .form-section input:focus {
+      border-color: #004B87; box-shadow: 0 0 6px rgba(0,75,135,0.5);
+    }
+    .password-wrapper { position: relative; }
+    .toggle-pass {
+      position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+      cursor: pointer; font-size: 14px; color: #004B87;
+    }
+    .form-section button {
+      margin-top: 20px; width: 100%; padding: 12px;
+      background: #ffcc00; border:none; border-radius: 8px;
+      color: #004B87; font-weight: bold; font-size: 16px;
+      cursor: pointer; transition: background 0.3s;
+    }
+    .form-section button:hover { background: #ff9900; }
+    .back {
+      display:block; text-align:center; margin-top:15px;
+      color:#004B87; text-decoration:none; font-weight:bold;
+    }
+    .back:hover { color:#ffcc00; }
+  </style>
+</head>
+<body>
+  <div class="form-section">
+    <h2>Login</h2>
+    <form action="login.php" method="POST">
+      <label for="login-username">Username</label>
+      <input type="text" id="login-username" name="username" required>
+
+      <label for="login-password">Password</label>
+      <div class="password-wrapper">
+        <input type="password" id="login-password" name="password" required>
+        <span class="toggle-pass" onclick="togglePassword('login-password')">👁</span>
+      </div>
+
+      <button type="submit">Login</button>
+    </form>
+    <a href="vital.html" class="back">⬅ Back to Home</a>
+  </div>
+
+  <script>
+    function togglePassword(id) {
+      const input = document.getElementById(id);
+      input.type = input.type === "password" ? "text" : "password";
+    }
+  </script>
+</body>
+</html>

@@ -1,44 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alok Kumar - Personal Page</title>
-  <link rel="stylesheet" href="introstyle.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services - VitalCare Clinic</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header>
-    <div class="container">
-      <h1>Alok Kumar</h1>
-      <p class="subtitle">Student at Govt. Engineering College Vaishali <br><h6>Shyampur,Mansurpur,chaksikandar,bidupur, vaishali (844115)</h6></p>
-    </div>
+
+<body class="bg-[#f4f9ff] font-sans overflow-x-hidden">
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-[#004B87] to-[#0066cc] text-white text-center py-8">
+    <h1 class="text-3xl font-bold">Our Services</h1>
+    <p class="mt-2 text-lg">Choose a service and enroll/query easily</p>
   </header>
 
-  <section class="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p><strong>Name:</strong> Alok Kumar</p>
-      <p><strong>Hometown:</strong> Banka, Bihar.</p>
-      <p><strong>College:</strong> Govt. Engineering College, Vaishali.</p>
-      <p><strong>Branch:</strong> Computer Science and Engineering (CSE).</p>
-      <p><strong>Hobbies:</strong> Playing Cricket, Exploring New Technologies.</p>
+  <!-- Services Section -->
+  <section class="grid gap-6 p-6 sm:grid-cols-2 lg:grid-cols-3">
+    <!-- Card Example -->
+    <div class="bg-white rounded-xl shadow-md p-5 text-center hover:-translate-y-1 transition">
+      <img
+        src="https://media.istockphoto.com/id/1199908661/photo/physiotherapist-treatment-patient-she-holding-patients-hand-shoulder-joint-treatment.jpg?s=612x612&w=0&k=20&c=yghgsRCfhifTxzIS8UqlHIxpyyHDUNXkfqwQHABDRuY="
+        alt="Physiotherapy" class="rounded-lg mb-4 h-40 w-full object-cover" />
+      <h3 class="text-xl font-bold text-[#004B87]">Physiotherapy</h3>
+      <p class="text-gray-600 text-sm mt-2">Advanced care for pain relief, mobility, and recovery.</p>
+      <button onclick="openModal('Physiotherapy')"
+        class="mt-4 px-4 py-2 bg-yellow-400 text-[#004B87] font-bold rounded-lg hover:bg-yellow-500 transition">Enroll /
+        Query</button>
     </div>
+
+    <!-- Repeat cards for each service -->
+    <div class="bg-white rounded-xl shadow-md p-5 text-center hover:-translate-y-1 transition">
+      <img src="https://www.shutterstock.com/shutterstock/videos/3585029813/thumb/1.jpg?ip=x480" alt="Rehabilitation"
+        class="rounded-lg mb-4 h-40 w-full object-cover" />
+      <h3 class="text-xl font-bold text-[#004B87]">Rehabilitation</h3>
+      <p class="text-gray-600 text-sm mt-2">Specialized programs for post-injury & post-surgery recovery.</p>
+      <button onclick="openModal('Rehabilitation')"
+        class="mt-4 px-4 py-2 bg-yellow-400 text-[#004B87] font-bold rounded-lg hover:bg-yellow-500 transition">Enroll /
+        Query</button>
+    </div>
+
+    <div class="bg-white rounded-xl shadow-md p-5 text-center hover:-translate-y-1 transition">
+      <img src="https://t4.ftcdn.net/jpg/02/81/99/91/360_F_281999165_mt4ZNtgaxP77oJvIaKklqjm2tkiLwwJZ.jpg"
+        alt="Sports Therapy" class="rounded-lg mb-4 h-40 w-full object-cover" />
+      <h3 class="text-xl font-bold text-[#004B87]">Sports Therapy</h3>
+      <p class="text-gray-600 text-sm mt-2">Care and recovery for athletes & active individuals.</p>
+      <button onclick="openModal('Sports Therapy')"
+        class="mt-4 px-4 py-2 bg-yellow-400 text-[#004B87] font-bold rounded-lg hover:bg-yellow-500 transition">Enroll /
+        Query</button>
+    </div>
+
+    <!-- ⚡ Add baaki cards exactly isi format me (Orthopedic Care, Neurological Rehab, Pediatric, Cardiac, Pain, Post-Surgical, Geriatric) -->
+
   </section>
 
-  <section class="hobbies">
-    <div class="container">
-      <h2 style="color:rgb(82, 24, 140)">My Hobbies :-</h2>
-      <ul>
-        <li>Playing Cricket.</li>
-        <li>Exploring New Technologies.</li>
-      </ul>
-    </div>
-  </section>
+  <!-- Back Button -->
+  <div class="text-center my-10">
+    <a href="vital.html" class="px-6 py-3 bg-[#004B87] text-white rounded-lg font-bold hover:bg-[#0066cc] transition">⬅
+      Back to Home</a>
+  </div>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Alok Kumar</p>
+  <!-- Modal -->
+  <div id="enrollModal" class="hidden fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50">
+    <div class="bg-white rounded-xl shadow-xl p-6 w-11/12 max-w-md animate-fadeIn relative">
+      <button onclick="closeModal()"
+        class="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-xl">&times;</button>
+      <h2 id="serviceTitle" class="text-2xl font-bold text-[#004B87] mb-4">Service Enquiry</h2>
+      <form class="space-y-3">
+        <input type="text" placeholder="Your Name" required
+          class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#004B87]" />
+        <input type="email" placeholder="Your Email" required
+          class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#004B87]" />
+        <textarea rows="4" placeholder="Your Query"
+          class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#004B87]"></textarea>
+        <button type="submit"
+          class="w-full py-3 bg-[#004B87] text-white font-bold rounded-lg hover:bg-[#0066cc] transition">Submit</button>
+      </form>
     </div>
-  </footer>
+  </div>
+
+  <!-- Animations -->
+  <style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .animate-fadeIn {
+      animation: fadeIn 0.3s ease-in-out;
+    }
+  </style>
+
+  <!-- JS for Modal -->
+  <script>
+    function openModal(service) {
+      document.getElementById("enrollModal").classList.remove("hidden");
+      document.getElementById("serviceTitle").innerText = service + " - Enquiry";
+    }
+    function closeModal() {
+      document.getElementById("enrollModal").classList.add("hidden");
+    }
+    window.onclick = function (event) {
+      const modal = document.getElementById("enrollModal");
+      if (event.target == modal) {
+        modal.classList.add("hidden");
+      }
+    }
+  </script>
+
 </body>
+
 </html>
