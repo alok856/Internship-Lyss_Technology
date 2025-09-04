@@ -2,120 +2,183 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Services - VitalCare Clinic</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VitalCare Physiotherapy Clinic - Dr. Chandani Kumari</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 
-<body class="bg-[#f4f9ff] font-sans overflow-x-hidden">
+<body class="overflow-x-hidden font-sans"></body>
 
-  <!-- Header -->
-  <header class="bg-gradient-to-r from-[#004B87] to-[#0066cc] text-white text-center py-8">
-    <h1 class="text-3xl font-bold">Our Services</h1>
-    <p class="mt-2 text-lg">Choose a service and enroll/query easily</p>
-  </header>
+<body class="font-sans bg-gray-100 text-gray-800">
 
-  <!-- Services Section -->
-  <section class="grid gap-6 p-6 sm:grid-cols-2 lg:grid-cols-3">
-    <!-- Card Example -->
-    <div class="bg-white rounded-xl shadow-md p-5 text-center hover:-translate-y-1 transition">
-      <img
-        src="https://media.istockphoto.com/id/1199908661/photo/physiotherapist-treatment-patient-she-holding-patients-hand-shoulder-joint-treatment.jpg?s=612x612&w=0&k=20&c=yghgsRCfhifTxzIS8UqlHIxpyyHDUNXkfqwQHABDRuY="
-        alt="Physiotherapy" class="rounded-lg mb-4 h-40 w-full object-cover" />
-      <h3 class="text-xl font-bold text-[#004B87]">Physiotherapy</h3>
-      <p class="text-gray-600 text-sm mt-2">Advanced care for pain relief, mobility, and recovery.</p>
-      <button onclick="openModal('Physiotherapy')"
-        class="mt-4 px-4 py-2 bg-yellow-400 text-[#004B87] font-bold rounded-lg hover:bg-yellow-500 transition">Enroll /
-        Query</button>
-    </div>
+    <!-- ✅ Updated Header with Responsive Navbar -->
+    <header class="bg-[#004B87] shadow-md px-6 md:px-12 py-4 flex items-center justify-between text-white relative">
+        <!-- Logo -->
+        <div class="flex items-center">
+            <img src="https://t3.ftcdn.net/jpg/03/24/58/44/360_F_324584485_qtdluDzmBNkJvmntEPlNeG1htwPktgCa.jpg"
+                alt="Logo" class="w-12 h-12 rounded-full mr-4">
+            <div>
+                <h2 class="text-xl font-bold">VitalCare Physiotherapy Clinic</h2>
+                <span
+                    class="bg-gradient-to-r from-orange-500 via-pink-500 via-sky-400 to-yellow-400 bg-clip-text text-transparent font-bold text-lg">
+                    Dr. Chandani Kumari
+                </span>
+                <p class="text-yellow-400 text-sm">(Physiotherapy Specialist)</p>
+            </div>
+        </div>
 
-    <!-- Repeat cards for each service -->
-    <div class="bg-white rounded-xl shadow-md p-5 text-center hover:-translate-y-1 transition">
-      <img src="https://www.shutterstock.com/shutterstock/videos/3585029813/thumb/1.jpg?ip=x480" alt="Rehabilitation"
-        class="rounded-lg mb-4 h-40 w-full object-cover" />
-      <h3 class="text-xl font-bold text-[#004B87]">Rehabilitation</h3>
-      <p class="text-gray-600 text-sm mt-2">Specialized programs for post-injury & post-surgery recovery.</p>
-      <button onclick="openModal('Rehabilitation')"
-        class="mt-4 px-4 py-2 bg-yellow-400 text-[#004B87] font-bold rounded-lg hover:bg-yellow-500 transition">Enroll /
-        Query</button>
-    </div>
+        <!-- Desktop Navbar (Home, About, Contact always visible) -->
+        <nav class="hidden md:flex space-x-4">
+            <a href="#home"
+                class="nav-link px-4 py-2 rounded-md font-semibold hover:bg-yellow-300 hover:text-[#004B87] transition">Home</a>
+            <a href="#about"
+                class="nav-link px-4 py-2 rounded-md font-semibold hover:bg-yellow-300 hover:text-[#004B87] transition">About Me</a>
+            <a href="#contact"
+                class="nav-link px-4 py-2 rounded-md font-semibold hover:bg-yellow-300 hover:text-[#004B87] transition">Contact</a>
+            <a href="vital-service.html"
+                class="nav-link px-4 py-2 rounded-md font-semibold hover:bg-yellow-300 hover:text-[#004B87] transition">Services</a>
+            <a href="vital-sign.html"
+                class="nav-link px-4 py-2 rounded-md font-semibold hover:bg-yellow-300 hover:text-[#004B87] transition">Sign-up</a>
+            <a href="vital-login.html"
+                class="nav-link px-4 py-2 rounded-md font-semibold hover:bg-yellow-300 hover:text-[#004B87] transition">Login</a>
+        </nav>
 
-    <div class="bg-white rounded-xl shadow-md p-5 text-center hover:-translate-y-1 transition">
-      <img src="https://t4.ftcdn.net/jpg/02/81/99/91/360_F_281999165_mt4ZNtgaxP77oJvIaKklqjm2tkiLwwJZ.jpg"
-        alt="Sports Therapy" class="rounded-lg mb-4 h-40 w-full object-cover" />
-      <h3 class="text-xl font-bold text-[#004B87]">Sports Therapy</h3>
-      <p class="text-gray-600 text-sm mt-2">Care and recovery for athletes & active individuals.</p>
-      <button onclick="openModal('Sports Therapy')"
-        class="mt-4 px-4 py-2 bg-yellow-400 text-[#004B87] font-bold rounded-lg hover:bg-yellow-500 transition">Enroll /
-        Query</button>
-    </div>
+        <!-- Hamburger button (Mobile only) -->
+        <button id="menu-btn" class="md:hidden flex flex-col space-y-1 focus:outline-none">
+            <span class="w-6 h-0.5 bg-white"></span>
+            <span class="w-6 h-0.5 bg-white"></span>
+            <span class="w-6 h-0.5 bg-white"></span>
+        </button>
 
-    <!-- ⚡ Add baaki cards exactly isi format me (Orthopedic Care, Neurological Rehab, Pediatric, Cardiac, Pain, Post-Surgical, Geriatric) -->
+        <!-- Mobile Menu -->
+        <nav id="menu"
+            class="hidden absolute top-full left-0 w-full bg-[#004B87] flex-col items-start md:hidden shadow-lg">
+            <a href="#home"
+                class="nav-link block w-full px-4 py-2 font-semibold hover:bg-yellow-300 hover:text-[#004B87] transition">Home</a>
+            <a href="#about"
+                class="nav-link block w-full px-4 py-2 font-semibold hover:bg-yellow-300 hover:text-[#004B87] transition">About Me</a>
+            <a href="#contact"
+                class="nav-link block w-full px-4 py-2 font-semibold hover:bg-yellow-300 hover:text-[#004B87] transition">Contact</a>
+            <a href="vital-service.html"
+                class="nav-link block w-full px-4 py-2 font-semibold hover:bg-yellow-300 hover:text-[#004B87] transition">Services</a>
+            <a href="vital-sign.html"
+                class="nav-link block w-full px-4 py-2 font-semibold hover:bg-yellow-300 hover:text-[#004B87] transition">Sign-up</a>
+            <a href="vital-login.html"
+                class="nav-link block w-full px-4 py-2 font-semibold hover:bg-yellow-300 hover:text-[#004B87] transition">Login</a>
+        </nav>
+    </header>
 
-  </section>
+    <!-- Hero Section -->
+    <section id="home"
+        class="bg-gradient-to-r from-blue-600 to-[#004B87] text-white text-center py-20 flex flex-col items-center justify-center">
+        <h1
+            class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-orange-500 via-pink-500 via-sky-400 to-yellow-400 bg-clip-text text-transparent">
+            Welcome to VitalCare Physiotherapy Clinic</h1>
+        <p class="text-lg md:text-xl mb-6">Your dedicated physiotherapist helping you reclaim health and vitality.</p>
+        <a href="#about"
+            class="bg-yellow-400 text-[#004B87] font-bold px-6 py-3 rounded-full shadow hover:bg-yellow-500 transition">Explore
+            My Journey</a>
+    </section>
 
-  <!-- Back Button -->
-  <div class="text-center my-10">
-    <a href="vital.html" class="px-6 py-3 bg-[#004B87] text-white rounded-lg font-bold hover:bg-[#0066cc] transition">⬅
-      Back to Home</a>
-  </div>
+    <!-- Profile Section -->
+    <section id="about" class="flex flex-col md:flex-row items-center gap-8 px-6 md:px-12 py-16 bg-white shadow-md">
+        <div class="w-60 h-60 rounded-full overflow-hidden border-4 border-red-900 shadow-lg">
+            <img src="ac.jpg" alt="Dr. Chandani Kumari" class="w-full h-full object-cover">
+        </div>
+        <div class="max-w-2xl text-center md:text-left">
+            <h2 class="text-3xl font-bold text-[#004B87] mb-4">About Dr. Chandani Kumari</h2>
+            <p class="text-lg leading-relaxed text-gray-700">
+                <span class="font-bold text-red-700">Dr. Chandani Kumari</span> is a passionate and highly motivated
+                physiotherapy student,
+                currently pursuing a <span class="font-bold text-blue-600">Bachelor's in Physiotherapy (BPT)</span>.
+                With a deep interest in
+                the human body and rehabilitation, she is committed to helping her patients recover and improve their
+                physical health through specialized
+                treatments. She is currently exploring a variety of clinical techniques and therapies aimed at restoring
+                function and mobility.
+            </p>
+        </div>
+    </section>
 
-  <!-- Modal -->
-  <div id="enrollModal" class="hidden fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50">
-    <div class="bg-white rounded-xl shadow-xl p-6 w-11/12 max-w-md animate-fadeIn relative">
-      <button onclick="closeModal()"
-        class="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-xl">&times;</button>
-      <h2 id="serviceTitle" class="text-2xl font-bold text-[#004B87] mb-4">Service Enquiry</h2>
-      <form class="space-y-3">
-        <input type="text" placeholder="Your Name" required
-          class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#004B87]" />
-        <input type="email" placeholder="Your Email" required
-          class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#004B87]" />
-        <textarea rows="4" placeholder="Your Query"
-          class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#004B87]"></textarea>
-        <button type="submit"
-          class="w-full py-3 bg-[#004B87] text-white font-bold rounded-lg hover:bg-[#0066cc] transition">Submit</button>
-      </form>
-    </div>
-  </div>
+    <!-- Services Section -->
+    <section id="services" class="text-center py-16 bg-gray-50">
+        <h2 class="text-3xl font-bold text-[#004B87] mb-8">Our Services</h2>
+        <div class="flex flex-wrap justify-center gap-6">
+            <div
+                class="w-64 p-6 bg-white rounded-xl shadow hover:bg-yellow-300 hover:text-[#004B87] transform hover:-translate-y-3 hover:scale-105 transition">
+                <h3 class="text-xl font-semibold">Physical Therapy</h3>
+                <p class="text-gray-600 mt-2">Rehabilitation of muscle and joint injuries to regain optimal function and
+                    strength.</p>
+            </div>
+            <div
+                class="w-64 p-6 bg-white rounded-xl shadow hover:bg-yellow-300 hover:text-[#004B87] transform hover:-translate-y-3 hover:scale-105 transition">
+                <h3 class="text-xl font-semibold">Sports Injuries</h3>
+                <p class="text-gray-600 mt-2">Specialized care and treatment for athletes to recover from sports-related
+                    injuries.</p>
+            </div>
+            <div
+                class="w-64 p-6 bg-white rounded-xl shadow hover:bg-yellow-300 hover:text-[#004B87] transform hover:-translate-y-3 hover:scale-105 transition">
+                <h3 class="text-xl font-semibold">Post-Surgery Recovery</h3>
+                <p class="text-gray-600 mt-2">Comprehensive rehabilitation to restore mobility and strength after
+                    surgery.</p>
+            </div>
+        </div>
+    </section>
 
-  <!-- Animations -->
-  <style>
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: scale(0.8);
-      }
+    <!-- Contact Section -->
+    <section id="contact" class="bg-[#004B87] text-white text-center py-10">
+        <h2 class="text-3xl font-bold mb-2">Contact</h2>
+        <p class="text-lg mb-4">Feel free to get in touch for any consultation or inquiries.</p>
+        <a href="mailto:drchandani@example.com"
+            class="bg-yellow-400 text-[#004B87] font-bold px-6 py-2 rounded-full shadow hover:bg-yellow-500 transition">Email
+            Us</a>
+    </section>
 
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
+    <!-- Footer -->
+    <footer class="bg-[#004B87] text-center text-white py-6">
+        <p class="text-xs">&copy; 2025 Dr. Chandani Kumari. All rights reserved. |
+            <a href="mailto:drchandani@2006.com" class="text-yellow-400">contact</a>
+        </p>
 
-    .animate-fadeIn {
-      animation: fadeIn 0.3s ease-in-out;
-    }
-  </style>
+        <div class="flex justify-center mt-3 space-x-6">
+            <a href="https://www.facebook.com/share/16BfnAyNfS/"
+                class="text-orange-600 hover:text-white transition">Facebook</a>
+            <a href="https://www.linkedin.com/in/alok-kumar-785762295"
+                class="text-yellow-700 hover:text-white transition">LinkedIn</a>
+            <a href="https://www.instagram.com/aarav_alok86?igsh=MTBqeGwzOHRvdnkzeQ=="
+                class="text-pink-500 hover:text-white transition">Instagram</a>
+        </div>
 
-  <!-- JS for Modal -->
-  <script>
-    function openModal(service) {
-      document.getElementById("enrollModal").classList.remove("hidden");
-      document.getElementById("serviceTitle").innerText = service + " - Enquiry";
-    }
-    function closeModal() {
-      document.getElementById("enrollModal").classList.add("hidden");
-    }
-    window.onclick = function (event) {
-      const modal = document.getElementById("enrollModal");
-      if (event.target == modal) {
-        modal.classList.add("hidden");
-      }
-    }
-  </script>
+        <p
+            class="mt-4 text-lg font-bold bg-gradient-to-r from-orange-500 via-pink-500 via-sky-400 to-yellow-400 bg-clip-text text-transparent">
+            Developed by Alok
+        </p>
+    </footer>
+
+    <script>
+        // Toggle mobile menu
+        const menuBtn = document.getElementById("menu-btn");
+        const menu = document.getElementById("menu");
+
+        menuBtn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+
+        // Active nav link highlight
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                navLinks.forEach(nav => nav.classList.remove('bg-yellow-400', 'text-[#004B87]'));
+                this.classList.add('bg-yellow-400', 'text-[#004B87]');
+            });
+        });
+    </script>
 
 </body>
-
 </html>

@@ -81,13 +81,26 @@
             <p class="text-lg leading-relaxed text-gray-700">
                 <span class="font-bold text-red-700">Dr. Chandani Kumari</span> is a passionate and highly motivated
                 physiotherapy student,
-                currently pursuing a <span class="font-bold text-blue-600">Bachelor's in Physiotherapy (BPT)</span>.
-                With a deep interest in
-                the human body and rehabilitation, she is committed to helping her patients recover and improve their
-                physical health through specialized
-                treatments. She is currently exploring a variety of clinical techniques and therapies aimed at restoring
+                currently pursuing a
+                <span class="font-bold text-blue-600" style="cursor:pointer;" onclick="toggleBPT()">
+                    Bachelor's in Physiotherapy (BPT)
+                    <span id="bpt-info" style="display:none; font-weight:normal; color:#333; font-size:14px;">
+                        <br><br>
+                        📘 <b>BPT (Bachelor of Physiotherapy)</b> is a 4.5 years course (4 years study + 6 months
+                        internship).
+                        <br>👉 Eligibility: 10+2 with PCB (Physics, Chemistry, Biology)
+                        <br>👉 Core Subjects: Anatomy, Physiology, Biomechanics, Pathology, Neurology, Orthopedics
+                        <br>👉 Career Scope: Physiotherapist, Rehabilitation Specialist, Sports Therapist
+                        <br>👉 Higher Studies: MPT (Master in Physiotherapy), PhD
+                    </span>
+                </span>.
+                With a deep interest in the human body and rehabilitation, she is committed to helping her patients
+                recover and improve their
+                physical health through specialized treatments. She is currently exploring a variety of clinical
+                techniques and therapies aimed at restoring
                 function and mobility.
             </p>
+
         </div>
     </section>
 
@@ -142,7 +155,7 @@
 
         <p
             class="mt-4 text-lg font-bold bg-gradient-to-r from-orange-500 via-pink-500 via-sky-400 to-yellow-400 bg-clip-text text-transparent">
-            Developed by Alok
+            Developed by Alok.
         </p>
     </footer>
 
@@ -155,6 +168,12 @@
                 this.classList.add('bg-yellow-400', 'text-[#004B87]');
             });
         });
+
+        function toggleBPT() {
+            const info = document.getElementById("bpt-info");
+            info.style.display = (info.style.display === "none") ? "inline" : "none";
+        }
+    </script>
     </script>
 
 </body>
